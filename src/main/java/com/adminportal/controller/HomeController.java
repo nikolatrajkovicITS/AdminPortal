@@ -8,6 +8,16 @@ public class HomeController {
 
 	@RequestMapping("/")
 	public String index() {
+		return "redirect:/home";
+	}
+	
+	@RequestMapping("/home") // When we come to the home page, display home page
+	public String home() {
 		return "home";
+	}
+	
+	@RequestMapping("/login")
+	public String login() {
+		return "login";
 	}
 }
