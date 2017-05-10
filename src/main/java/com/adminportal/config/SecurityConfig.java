@@ -66,6 +66,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		http
 		    .csrf().disable().cors().disable()                              // If we use REST we should disable csrf and cors
 		    .formLogin().failureUrl("/login?error").defaultSuccessUrl("/")  // On front: th:if="${param.error != null}": ako je "/login?error" ako je param ?error" kao ovde sto je navedno onda on izbacuje validaciju za wrong username i pw
+		    .defaultSuccessUrl("/")
 		    .loginPage("/login").permitAll()                                // Permit access on the Login page
 		    .and()
 		    .logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
